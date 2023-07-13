@@ -1,0 +1,6 @@
+project_name = "rnd2022"
+project_id = "rnd2022"
+region = "asia-south1"
+zone = "asia-south1-c"
+big_query_dataset = "prj.serv.logs.sink.dataset"
+logs_sink = "prj.logs.sink"
