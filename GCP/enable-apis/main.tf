@@ -1,7 +1,6 @@
 provider "google" {
   project = var.project_id
   region  = var.region
-  credentials = var.credentials
 }
 resource "google_project_service" "enable_dataproc_api" {
   project = var.project_id
