@@ -20,7 +20,7 @@ resource "google_project_iam_member" "composer_sa" {
     "roles/storage.objectViewer",
   ])
   role = each.value
-  member = "serviceAccount:${google_service_account.composer_sa.email}"
+  member = "serviceAccount:${google_service_account.composer_sa}"
   project = var.project_id
 }
 
@@ -41,6 +41,6 @@ resource "google_project_iam_member" "other_sa" {
     "roles/storage.objectViewer",
   ])
   role = each.value
-  member = "serviceAccount:${google_service_account.other_sa.email}"
+  member = "serviceAccount:${google_service_account.other_sa}"
   project = var.project_id
 }
