@@ -4,7 +4,7 @@ resource "google_compute_network" "terraform_vpc" {
 }
 
 resource "google_compute_subnetwork" "composer_subnet" {
-  ip_cip_cidr_range = var.ip_range_composer
+  ip_cidr_range = var.ip_range_composer
   region = var.region
   private_ip_google_access = var.private_google_access
   network = google_compute_network.terraform_vpc.name
