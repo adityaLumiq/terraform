@@ -21,6 +21,7 @@ resource "google_project_iam_member" "composer_sa" {
   ])
   role = each.value
   member = "serviceAccount:${google_service_account.composer_sa.email}"
+  project = var.project_id
 }
 
 resource "google_service_account" "other_sa" {
@@ -41,4 +42,5 @@ resource "google_project_iam_member" "other_sa" {
   ])
   role = each.value
   member = "serviceAccount:${google_service_account.other.email}"
+  project = var.project_id
 }

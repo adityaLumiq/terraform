@@ -10,3 +10,8 @@ variable "other_sa" {
   
 }
 
+variable "project_id" {
+  type = string
+  
+}
+
