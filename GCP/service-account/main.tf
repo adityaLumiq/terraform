@@ -27,7 +27,7 @@ resource "google_service_account" "other_sa" {
   account_id   = var.other_sa
   display_name = "Other Service Account"
 }
-resource "google_project_iam_member" "composer_sa_role" {
+resource "google_project_iam_member" "other_sa_role" {
   for_each  = toset([
     "roles/bigquery.dataEditor",
     "roles/bigquery.filteredDataViewer",
