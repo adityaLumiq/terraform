@@ -1,23 +1,31 @@
-resource "google_compute_network" "vpc-network" {
-name = var.vpc_network_name
-auto_create_subnetworks = "false"
+resource "google_compute_network" "terraform_vpc" {
+  name = var.vpc_network_name
+  ip_cidr_range = var.ip_cidr_range
+  region = var.region
+  
 }
 
-resource "google_compute_subnetwork" "public-subnetwork" {
-name = var.subnetwork
-ip_cidr_range = "10.2.0.0/16"
+resource "google_compute_subnetwork" "composer_subnet" {
+  ip_cip_cidr_range = var.ip_range_composer
   region = var.region
-  network = google_compute_network.vpc-network.name
+  private_ip_google_access = var.private_google_access
+  network = google_compute_network.terraform_vpc.name
+  secondary_ip_range {
+    range_name = composer_pods
+    ip_cidr_range = var.composer_pods
+  }
+  secondary_ip_range {
+    range_name = composer_service
+    ip_cidr_range = var.composer_service
   }
 
-  resource "google_compute_network" "vpc_network01" {
-  name = var.vpc_network_name02
-  auto_create_subnetworks = "false"
+  
 }
 
-resource "google_compute_subnetwork" "private-subnetwork" {
-  name = var.subnetwork02
-  ip_cidr_range = "10.3.0.0/16"
+resource "google_compute_subnetwork" "app_subnet" {
+  ip_cidr_range = var.ip_range_other
   region = var.region
-  network = google_compute_network.vpc_network01.name
+  private_ip_google_access = var.private_google_access
+  network = google_compute_network.terraform_vpc.name
+  
 }
