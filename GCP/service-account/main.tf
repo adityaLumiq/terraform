@@ -41,6 +41,6 @@ resource "google_project_iam_member" "other_sa" {
     "roles/storage.objectViewer",
   ])
   role = each.value
-  member = "serviceAccount:${google_service_account.other.email}"
+  member = "serviceAccount:${google_service_account.other_sa.email}"
   project = var.project_id
 }
