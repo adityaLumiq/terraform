@@ -8,15 +8,6 @@ resource "google_compute_subnetwork" "composer_subnet" {
   region = var.region
   private_ip_google_access = var.private_google_access
   network = google_compute_network.terraform_vpc.name
-  secondary_ip_range {
-    range_name = composer_pods
-    ip_cidr_range = var.composer_pods
-  }
-  secondary_ip_range {
-    range_name = composer_service
-    ip_cidr_range = var.composer_service
-  }
-
   
 }
 
