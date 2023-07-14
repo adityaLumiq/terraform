@@ -1,6 +1,6 @@
 region = "asia-south1"
 zone = "asia-south1c"
-vpc_network_name = "terraform_composer"
+vpc_network_name = "terraform-composer"
 subnetwork_composer = "composer_subnet"
 ip_range_composer = "10.2.0.0/24"
 subnetwork_other = "app-subnet"
