@@ -20,3 +20,13 @@ resource "google_compute_subnetwork" "app_subnet" {
   network = google_compute_network.terraform_vpc.name
   
 }
+
+output "vpc_id" {
+  value = [
+    google_compute_network.terraform_vpc,
+    google_compute_subnetwork.composer_subnet,
+    google_compute_subnetwork.app_subnet
+
+  ]
+  
+}
