@@ -15,4 +15,3 @@ resource "google_kms_crypto_key" "key_composer" {
     prevent_destroy = true
   }
 }
-
