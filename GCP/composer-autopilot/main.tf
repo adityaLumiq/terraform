@@ -36,7 +36,7 @@ resource "google_composer_environment" "composer" {
    private_environment_config {
     enable_private_endpoint = true
 # GKE control plane range.
-    master_ipv4_cidr_block = var.master_authorized_networks[0]
+    master_ipv4_cidr_block = var.master_authorized_networks[0].cidr_block
     }
 
     software_config {
