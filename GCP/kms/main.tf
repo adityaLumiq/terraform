@@ -12,6 +12,6 @@ resource "google_kms_crypto_key" "key_composer" {
     algorithm = var.algorithm
   }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
