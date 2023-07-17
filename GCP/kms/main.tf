@@ -1,0 +1,17 @@
+resource "google_kms_key_ring" "default" {
+  name = var.keyring_name
+  location = var.region
+}
+
+resource "google_kms_crypto_key" "key" {
+  name = var.key_name
+  key_ring = google_kms_key_ring.keyring.id
+  rotation_period = var.rotation_period
+  version_template {
+    algorithm = var.algorithm
+  }
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
