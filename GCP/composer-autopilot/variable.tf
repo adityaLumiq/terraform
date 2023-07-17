@@ -98,24 +98,3 @@ variable "ip_svc" {
   }))
   description = "Svc Ranges"
 }
-
-variable "selected_vpc_index" {
-  type    = number
-  default = 0  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_vpc_subnetwork_index" {
-  type    = number
-  default = 1  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_kms_index" {
-  type    = number
-  default = 0  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_sa_index" {
-  type = number
-  default = 0 #Change this index to 1 if you want to use the second VPC
-  
-}
