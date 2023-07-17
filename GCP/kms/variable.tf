@@ -18,3 +18,7 @@ variable "rotation_period" {
   description = "Time in seconds to rotate key"
   type = string
 }
+variable "project" {
+  description = "Project id"
+  type = string
+}
