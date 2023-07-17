@@ -51,8 +51,9 @@ resource "google_composer_environment" "composer" {
     environment_size = "ENVIRONMENT_SIZE_SMALL"
 
     node_config {
-      network    = data.terraform_remote_state.vpc_id.outputs.vpc_id[var.selected_vpc_index]
-      subnetwork = data.terraform_remote_state.vpc_id.outputs.vpc_id[var.selected_vpc_subnetwork_index]
+      #network    = data.terraform_remote_state.vpc_id.outputs.vpc_id[var.selected_vpc_index]
+      network    = element(data.terraform_remote_state.vpc_id.outputs.vpc_id, var.selected_vpc_index)
+      subnetwork = element(data.terraform_remote_state.vpc_id.outputs.vpc_id, var.selected_vpc_subnetwork_index)
       service_account = data.terraform_remote_state.sa.outputs.service_account[var.selected_sa_index]
         enable_ip_masq_agent = false
       ip_allocation_policy {
