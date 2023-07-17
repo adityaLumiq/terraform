@@ -1,9 +1,9 @@
 module "vpc" {
-    source = "../vpc"
+    source = "GCP/vpc"
 }
 
 module "sa" {
-    source = "../service-account"
+    source = "GCP/service-account"
      
 }
 
