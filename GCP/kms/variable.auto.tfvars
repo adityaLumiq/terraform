@@ -1,4 +1,4 @@
-keyring_name  = "terraform_test_keyring"
+keyring_name  = "terraform_composer_keyring"
 region = "asia-south1"
 key_name = "terraform_composer_key"
 rotation_period = "2592000s" 
