@@ -24,3 +24,4 @@ master_authorized_networks = [ {
   cidr_block = "10.3.0.0/28"
   display_name = "composer-cidr"
 } ]
+allow_ip_range = "10.54.2.0/24"

@@ -75,3 +75,10 @@ variable "master_authorized_networks" {
   default     = []
   description = "List of master authorized networks. If none are provided, disallow external access (except the cluster node IPs, which GKE automatically whitelists)."
 }
+
+variable "allow_ip_range" {
+  type = string
+  description = "Subnet to access Airlflow UI"
+  
+}
+
