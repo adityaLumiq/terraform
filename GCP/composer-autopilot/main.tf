@@ -56,11 +56,11 @@ resource "google_composer_environment" "composer" {
       service_account = data.terraform_remote_state.sa.outputs.service_account[var.selected_sa_index]
         enable_ip_masq_agent = false
       ip_allocation_policy {
-        cluster_ipv4_cidr_block       = var.ip_pods[var.cidr_block]
-        cluster_secondary_range_name  = var.ip_pods[var.display_name]
+        cluster_ipv4_cidr_block       = "192.168.0.0/16"
+        cluster_secondary_range_name  = "composer-pod-range"
         services_ipv4_cidr_block      = var.ip_svc[var.cidr_block]
         services_secondary_range_name = var.ip_svc[var.display_name]
-        use_ip_aliases                =  true
+        #use_ip_aliases                =  true
         }
       
     }
