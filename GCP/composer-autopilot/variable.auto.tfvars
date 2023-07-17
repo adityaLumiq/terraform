@@ -25,3 +25,11 @@ master_authorized_networks = [ {
   display_name = "composer-cidr"
 } ]
 allow_ip_range = "10.54.2.0/24"
+ip_pod = [ {
+  cidr_block = "192.168.0.0/16"
+  display_name = "composer-pod-range"
+} ]
+ip_svc = [ {
+  cidr_block = "192.168.4.0/16"
+  display_name = "composer-svc-range"
+} ]

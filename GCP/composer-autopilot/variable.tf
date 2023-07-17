@@ -82,3 +82,19 @@ variable "allow_ip_range" {
   
 }
 
+variable "ip_pods" {
+  type = list(object({
+    cidr_block   = string
+    display_name = string
+  }))
+  description = "Pod Ranges"
+
+}
+
+variable "ip_svc" {
+  type = list(object({
+    cidr_block   = string
+    display_name = string
+  }))
+  
+}

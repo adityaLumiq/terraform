@@ -24,7 +24,7 @@ resource "google_composer_environment" "composer" {
     
     encryption_config {
 # KMS key 
-    kms_key_name = "projects/prj-srv-data-lake-prod/locations/asia-south1/keyRings/hdfc-ergo-poc/cryptoKeys/hdfc-ergo-poc-key"
+    kms_key_name = var.key_composer.name
     }
 
     environment_size = "ENVIRONMENT_SIZE_SMALL"
@@ -35,10 +35,10 @@ resource "google_composer_environment" "composer" {
       service_account = var.google_service_account.composer_sa.email
         enable_ip_masq_agent = false
       ip_allocation_policy {
-        cluster_ipv4_cidr_block       = "192.168.0.0/22"
-        cluster_secondary_range_name  = "composer-pod-cidr"
-        services_ipv4_cidr_block      = "192.168.4.0/24"
-        services_secondary_range_name = "composer-service-cidr"
+        cluster_ipv4_cidr_block       = var.ip_pods.cidr_block
+        cluster_secondary_range_name  = var.ip_svc.display_name
+        services_ipv4_cidr_block      = var.ip_svc.cidr_block
+        services_secondary_range_name = var.ip_svc.cidr_block
         use_ip_aliases                =  true
         }
       
