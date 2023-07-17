@@ -55,7 +55,7 @@ resource "google_composer_environment" "composer" {
       network    = element(data.terraform_remote_state.vpc_id.outputs.vpc_id, var.selected_vpc_index)
       subnetwork = data.terraform_remote_state.vpc_id.outputs.vpc_id[var.selected_vpc_subnetwork_index]
       service_account = data.terraform_remote_state.sa.outputs.service_account[var.selected_sa_index]
-      access_config {}
+      
         enable_ip_masq_agent = false
       ip_allocation_policy {
         cluster_ipv4_cidr_block       = var.ip_pods[0].cidr_block
