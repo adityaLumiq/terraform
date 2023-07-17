@@ -8,7 +8,7 @@ module "sa" {
 }
 
 module "kms" {
-    source = "../kms"
+    source = "GCP/kms"
   
 }
 
