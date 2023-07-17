@@ -88,10 +88,6 @@ variable "ip_pods" {
     display_name = string
   }))
   description = "Pod Ranges"
-  default = [ {
-    cidr_block   = []
-    display_name = []
-  } ]
 
 }
 
@@ -100,9 +96,5 @@ variable "ip_svc" {
     cidr_block   = string
     display_name = string
   }))
-  default = [ {
-    cidr_block   = []
-    display_name = []
-  } ]
-  
+  description = "Svc Ranges"
 }
