@@ -58,8 +58,8 @@ resource "google_composer_environment" "composer" {
       ip_allocation_policy {
         cluster_ipv4_cidr_block       = var.ip_pods.cidr_block
         cluster_secondary_range_name  = var.ip_pods.display_name
-        services_ipv4_cidr_block      = var.ip_svc[var.cidr_block]
-        services_secondary_range_name = var.ip_svc[var.display_name]
+        services_ipv4_cidr_block      = var.ip_svc.cidr_block
+        services_secondary_range_name = var.ip_svc.display_name
         #use_ip_aliases                =  true
         }
       
