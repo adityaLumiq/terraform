@@ -19,7 +19,7 @@ resource "google_composer_environment" "composer" {
     }
 
     software_config {
-      image_version = "composer-2-airflow-2"
+      image_version = var.image_version
     }
     
     encryption_config {
@@ -45,22 +45,22 @@ resource "google_composer_environment" "composer" {
     }
     workloads_config {
       scheduler {
-        cpu        = 0.5
-        memory_gb  = 1.875
-        storage_gb = 1
-        count      = 1
+        cpu        = var.scheduler.cpu
+        memory_gb  = var.scheduler.memory_gb
+        storage_gb = var.scheduler.storage_gb
+        count      = var.scheduler.count
       }
       web_server {
-        cpu        = 0.5
-        memory_gb  = 1.875
-        storage_gb = 1
+        cpu        = var.web_server.cpu
+        memory_gb  = var.web_server.memory_gb
+        storage_gb = var.web_server.storage_gb
       }
       worker {
-        cpu = 0.5
-        memory_gb  = 1.875
-        storage_gb = 1
-        min_count  = 1
-        max_count  = 3
+        cpu = var.worker.cpu
+        memory_gb  = var.worker.memory_gb
+        storage_gb = var.worker.storage_gb
+        min_count  = var.worker.min_count
+        max_count  = var.worker.max_count
       }
 
 
