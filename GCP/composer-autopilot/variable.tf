@@ -98,3 +98,20 @@ variable "ip_svc" {
   }))
   description = "Svc Ranges"
 }
+
+variable "kms" {
+  type = string
+  description = "KMS Key"
+}
+
+variable "composer_vpc" {
+  type = string
+  
+}
+variable "composer_subnetwork" {
+  type = string
+}
+
+variable "composer_service_account" {
+  
+}
