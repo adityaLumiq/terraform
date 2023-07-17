@@ -15,3 +15,9 @@ resource "google_kms_crypto_key" "key_composer" {
     prevent_destroy = true
   }
 }
+output "kms_key" {
+  value = [
+    google_kms_key_ring.keyring
+  ]
+  
+}
