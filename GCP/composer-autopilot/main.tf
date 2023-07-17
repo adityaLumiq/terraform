@@ -1,24 +1,3 @@
-variable "selected_vpc_index" {
-  type    = number
-  default = 0  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_vpc_subnetwork_index" {
-  type    = number
-  default = 1  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_kms_index" {
-  type    = number
-  default = 0  # Change this index to 1 if you want to use the second VPC.
-}
-
-variable "selected_sa_index" {
-  type = number
-  default = 0 #Change this index to 1 if you want to use the second VPC
-  
-}
-
 data "terraform_remote_state" "vpc_id" {
   backend = "local"  # If you are using a remote backend, specify it here (e.g., "gcs" for Google Cloud Storage).
   config = {
@@ -77,10 +56,10 @@ resource "google_composer_environment" "composer" {
       service_account = data.terraform_remote_state.sa.outputs.service_account[var.selected_sa_index]
         enable_ip_masq_agent = false
       ip_allocation_policy {
-        cluster_ipv4_cidr_block       = var.ip_pods.cidr_block
-        cluster_secondary_range_name  = var.ip_pods.display_name
-        services_ipv4_cidr_block      = var.ip_svc.cidr_block
-        services_secondary_range_name = var.ip_svc.cidr_block
+        cluster_ipv4_cidr_block       = var.ip_pods[var.cidr_block]
+        cluster_secondary_range_name  = var.ip_pods[var.display_name]
+        services_ipv4_cidr_block      = var.ip_svc[var.cidr_block]
+        services_secondary_range_name = var.ip_svc[var.display_name]
         use_ip_aliases                =  true
         }
       
