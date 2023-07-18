@@ -1,7 +1,7 @@
 region = "asia-south1"
 zone = "asia-south1c"
 vpc_network_name = "terraform-composer"
-subnetwork_composer = "composer-subnet"
+composer_subnetwork = "composer-subnet"
 ip_range_composer = "10.54.2.0/24"
 subnetwork_other = "app-subnet"
 ip_range_other = "10.54.1.0/24"
@@ -9,7 +9,7 @@ ip_range_vpc = "10.0.0.0/24"
 composer_pods = "172.16.0.0/16"
 composer_service = "172.17.0.0/16"
 
-composer_sa = "terraform-composer-sa"
+composer_service_account = "terraform-composer-sa"
 other_sa = "terraform-other-sa"
 project_id = "outstanding-pen-389306"
 
@@ -19,6 +19,7 @@ rotation_period = "2592000s"
 algorithm = "GOOGLE_SYMMETRIC_ENCRYPTION" 
 project = "outstanding-pen-389306"
 
+composer_name = "terraform_composer"
 image_version = "composer-2.3.3-airflow-2.4.3"
 environment_size = "ENVIRONMENT_SIZE_SMALL"
 scheduler = {
