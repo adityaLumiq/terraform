@@ -50,7 +50,7 @@ module "composer" {
     scheduler = var.scheduler
     web_server = var.web_server
     worker = var.worker
-    composer_sa = module.service_account.google_service_account.composer_sa
+    composer_sa = module.service_account.service_account_email
 
 
 

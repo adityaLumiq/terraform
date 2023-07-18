@@ -44,10 +44,7 @@ resource "google_project_iam_member" "other_sa" {
   member = "serviceAccount:${google_service_account.other_sa.email}"
   project = var.project_id
 }
-output "service_account" {
-  value = [
-    google_service_account.composer_sa,
-    google_service_account.other_sa
-  ]
+output "service_account_email" {
+  value = google_service_account.composer_sa.email
   
 }
