@@ -52,3 +52,8 @@ ip_range_other = "10.54.1.0/24"
 ip_range_vpc = "10.0.0.0/24"
 composer_pods = "172.16.0.0/16"
 composer_service = "172.17.0.0/16"
+
+#sa
+composer_sa = "terraform-composer-sa"
+other_sa = "terraform-other-sa"
+project_id = "outstanding-pen-389306"

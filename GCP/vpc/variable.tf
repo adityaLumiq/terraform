@@ -67,15 +67,15 @@ variable "private_google_access" {
   
 }
 
-variable "composer_pods" {
-    type = string
-    description = "Secondary Pods Range"
+# variable "composer_pods" {
+#     type = string
+#     description = "Secondary Pods Range"
   
-}
+# }
 
-variable "composer_service" {
-    type = string
-    description = "Secondary Service Range"
+# variable "composer_service" {
+#     type = string
+#     description = "Secondary Service Range"
   
-}
+# }
 

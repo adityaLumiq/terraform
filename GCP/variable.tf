@@ -43,17 +43,17 @@ variable "environment_size" {
   default     = "ENVIRONMENT_SIZE_SMALL"
 }
 
-variable "composer_vpc" {
-  type = string
-  description = "Composer VPC"
+# variable "composer_vpc" {
+#   type = string
+#   description = "Composer VPC"
   
-}
+# }
 
-variable "composer_subnet" {
-  type = string
-  description = "Composer Subnet"
+# variable "composer_subnet" {
+#   type = string
+#   description = "Composer Subnet"
   
-}
+# }
 
 variable "composer_sa" {
   type = string
@@ -190,11 +190,11 @@ variable "private_google_access" {
   
 }
 
-variable "composer_sa" {
-  type = string
-  default = "Display Name of Composer Service Account"
+# variable "composer_sa" {
+#   type = string
+#   default = "Display Name of Composer Service Account"
   
-}
+# }
 
 variable "other_sa" {
   type = string
@@ -217,10 +217,10 @@ variable "algorithm" {
   type = string
 }
 
-variable "region" {
-  description = "Region for the KMS key"
-  type = string
-}
+# variable "region" {
+#   description = "Region for the KMS key"
+#   type = string
+# }
 
 variable "rotation_period" {
   description = "Time in seconds to rotate key"
