@@ -1,19 +1,20 @@
 module "vpc" {
-    source = "vpc"
+    source = "./vpc"
       
 }
 
 module "service_account" {
-    source = "service-account"
+    source = "./service-account"
   
 }
 
 module "kms" {
-    source = "kms"
+    source = "./kms"
   
 }
 
 module "composer" {
+    source = "./composer-autopilot"
     depends_on = [ module.kms, 
     module.service_account, 
     module.vpc 
