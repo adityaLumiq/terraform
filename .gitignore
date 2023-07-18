@@ -1,3 +1,2 @@
-GCP/main.tf
 GCP/terraform-gcp.json
 .terraform*
