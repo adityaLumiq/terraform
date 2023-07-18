@@ -72,7 +72,7 @@ variable "master_authorized_networks" {
     cidr_block   = string
     display_name = string
   })
-  default     = []
+  
   description = "List of master authorized networks. If none are provided, disallow external access (except the cluster node IPs, which GKE automatically whitelists)."
 }
 

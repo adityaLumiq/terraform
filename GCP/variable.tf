@@ -114,11 +114,11 @@ variable "composer_name" {
   
 }
 
-variable "region" {
-    type = string
-    description = "Region in which composer to be created"
+# variable "region" {
+#     type = string
+#     description = "Region in which composer to be created"
   
-}
+# }
 
 variable "image_version" {
     type = string
