@@ -36,8 +36,8 @@ ip_svc =  {
 
 
 #kms
-keyring_name  = "terraform_composer_keyring"
-kms_key_name = "terraform_composer_key"
+keyring_name  = "terraform_composer_keyring_test"
+kms_key_name = "terraform_composer_key_test"
 rotation_period = "2592000s" 
 algorithm = "GOOGLE_SYMMETRIC_ENCRYPTION" 
 project = "outstanding-pen-389306"
