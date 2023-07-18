@@ -26,7 +26,7 @@ module "compose-autopilot" {
     ip_pods = var.ip_pods
     ip_svc = var.ip_svc
     kms = module.kms.key_name
-    composer_vpc = var.composer_vpc
+    composer_vpc = var.vpc_network_name
     composer_subnetwork = var.composer_subnetwork
     composer_service_account = var.composer_service_account
 }
