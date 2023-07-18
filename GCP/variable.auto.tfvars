@@ -1,4 +1,4 @@
-composer_name = "terraform_composer"
+composer_name = "terraform-composer"
 region = "asia-south1"
 image_version = "composer-2.3.3-airflow-2.4.3"
 environment_size = "ENVIRONMENT_SIZE_SMALL"
