@@ -68,10 +68,10 @@ variable "worker" {
   description = "Configuration for resources used by Airflow workers."
 }
 variable "master_authorized_networks" {
-  type = list(object({
+  type = object({
     cidr_block   = string
     display_name = string
-  }))
+  })
   default     = []
   description = "List of master authorized networks. If none are provided, disallow external access (except the cluster node IPs, which GKE automatically whitelists)."
 }
@@ -83,19 +83,19 @@ variable "allow_ip_range" {
 }
 
 variable "ip_pods" {
-  type = list(object({
+  type = object({
     cidr_block   = string
     display_name = string
-  }))
+  })
   description = "Pod Ranges"
 
 }
 
 variable "ip_svc" {
-  type = list(object({
+  type = object({
     cidr_block   = string
     display_name = string
-  }))
+  })
   description = "Svc Ranges"
 }
 
@@ -113,5 +113,5 @@ variable "composer_subnetwork" {
 }
 
 variable "composer_service_account" {
-  
+  type = string 
 }

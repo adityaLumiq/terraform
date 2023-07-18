@@ -20,16 +20,16 @@ worker = {
   min_count  = 2
   max_count  = 6
 }
-master_authorized_networks = [ {
+master_authorized_networks =  {
   cidr_block = "10.3.0.0/28"
   display_name = "composer-cidr"
-} ]
+} 
 allow_ip_range = "10.54.2.0/24"
-ip_pods = [ {
+ip_pods =  {
   cidr_block = "192.168.0.0/16"
   display_name = "composer-pod-range"
-} ]
-ip_svc = [ {
+} 
+ip_svc =  {
   cidr_block = "192.168.4.0/16"
   display_name = "composer-svc-range"
-} ]
+} 

@@ -14,8 +14,8 @@ resource "google_composer_environment" "composer" {
     }
    private_environment_config {
     enable_private_endpoint = true
-# GKE control plane range.
-    master_ipv4_cidr_block = var.master_authorized_networks[0].cidr_block
+   # GKE control plane range.
+    master_ipv4_cidr_block = var.master_authorized_networks.cidr_block
     }
 
     software_config {
@@ -36,10 +36,10 @@ resource "google_composer_environment" "composer" {
       
         enable_ip_masq_agent = false
       ip_allocation_policy {
-        cluster_ipv4_cidr_block       = var.ip_pods[0].cidr_block
-        cluster_secondary_range_name  = var.ip_pods[0].display_name
-        services_ipv4_cidr_block      = var.ip_svc[0].cidr_block
-        services_secondary_range_name = var.ip_svc[0].display_name
+        cluster_ipv4_cidr_block       = var.ip_pods.cidr_block
+        cluster_secondary_range_name  = var.ip_pods.display_name
+        services_ipv4_cidr_block      = var.ip_svc.cidr_block
+        services_secondary_range_name = var.ip_svc.display_name
         #use_ip_aliases                =  true
         }
       
