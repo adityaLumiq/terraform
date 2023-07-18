@@ -25,7 +25,7 @@ module "compose-autopilot" {
     allow_ip_range = var.allow_ip_range
     ip_pods = var.ip_pods
     ip_svc = var.ip_svc
-    kms = module.kms.key_name
+    kms = var.key_name
     composer_vpc = var.composer_vpc
     composer_subnetwork = var.composer_subnetwork
     composer_service_account = var.composer_service_account
